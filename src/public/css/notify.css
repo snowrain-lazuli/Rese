@@ -1,0 +1,99 @@
+.notify-container {
+    max-width: 800px;
+    width: 70%;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #305dff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+/* タイトル */
+.notify-container h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 32px;
+}
+
+/* ラベル */
+.notify-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* 入力欄（form用） */
+.notify-container input[type="text"],
+.notify-container textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 14px;
+    background-color: #fff;
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 28px;
+    box-sizing: border-box;
+    resize: vertical;
+    /* ユーザーが伸縮できる */
+    min-height: 60px;
+}
+
+.notify-container textarea {
+    min-height: 180px;
+    /* confirmで本文が広くなるように */
+    white-space: pre-wrap;
+    /* 自動改行 */
+    word-wrap: break-word;
+}
+
+/* ボタン */
+.notify-container button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #305dff;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 完了メッセージ・リンク */
+.notify-container p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.notify-container a {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background-color: #fff;
+    color: #305dff;
+    text-decoration: none;
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.mail-preview {
+    background-color: #fff;
+    color: #000;
+    border-radius: 14px;
+    padding: 20px;
+    font-size: 16px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    min-height: 150px;
+    margin-bottom: 30px;
+}

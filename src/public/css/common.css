@@ -1,0 +1,200 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #eeeeee;
+}
+
+body,
+textarea,
+input {
+    color: #000;
+}
+
+textarea::placeholder,
+input::placeholder {
+    color: #000;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 32px 0px 32px;
+    height: 80px;
+    background-color: #eeeeee;
+}
+
+.hamburger {
+    width: 40px;
+    height: 40px;
+    background-color: #305dff;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 2001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 0;
+}
+
+.hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    padding-left: 6px;
+}
+
+.bar {
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.bar-middle {
+    width: 24px;
+}
+
+.bar-long {
+    width: 30px;
+}
+
+.bar-short {
+    width: 16px;
+}
+
+.hamburger.open .hamburger-lines {
+    display: none;
+}
+
+.close-icon {
+    display: none;
+    font-size: 28px;
+    background-color: #305dff;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.hamburger.open .close-icon {
+    display: block;
+}
+
+/* メニューオーバーレイ */
+.overlay-menu {
+    position: fixed;
+    inset: 0;
+    background-color: #fff;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.overlay-menu.open {
+    display: flex;
+}
+
+.overlay-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.overlay-menu li {
+    margin: 16px 0;
+}
+
+.overlay-menu button,a {
+    color: #305dff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.header .left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 12px;
+    font-size: 1.2rem;
+    color: #305dff;
+}
+
+/* main */
+.main {
+    padding-top: 80px;
+    padding: 80px 20px;
+}
+
+/* コンテンツ */
+.content {
+    flex-grow: 1;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content__heading {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: serif;
+}
+
+/* ボタン共通 */
+.btn {
+    background-color: #305dff;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+        height: auto;
+    }
+
+    .header__link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .header__link input[type="submit"] {
+        width: 100%;
+    }
+
+    .content {
+        padding: 24px;
+    }
+
+    .content__heading {
+        font-size: 24px;
+    }
+}

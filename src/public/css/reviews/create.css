@@ -1,0 +1,105 @@
+/* 全体のコンテナ */
+.container {
+    max-width: 700px;
+    margin: 40px auto 0;
+    /* 上寄せ・左右中央寄せ */
+    padding: 20px;
+}
+
+/* 青背景・角丸のフォーム全体ラッパー */
+.review-panel {
+    background-color: #305dff;
+    border-radius: 16px;
+    padding: 30px 24px;
+    color: white;
+}
+
+/* ラベルと値を横並びにし縦中央揃え（予約情報など用） */
+.info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.info-label {
+    width: 80px;
+    font-weight: bold;
+    text-align: left;
+    padding-right: 8px;
+    padding-top: 10px;
+}
+
+.info-value {
+    flex: 1;
+    text-align: left;
+    padding-top: 10px;
+}
+
+/* 評価のフォームグループ全体を横並び＆縦揃え */
+.rating-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+/* 評価ラベル */
+.rating-group label {
+    margin: 0;
+    white-space: nowrap;
+    font-weight: bold;
+    width: 65px;
+}
+
+/* 星評価 */
+.star-rating {
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+}
+
+.star {
+    user-select: none;
+}
+
+.star.selected {
+    color: gold;
+}
+
+/* コメントテキストエリア */
+textarea {
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    resize: vertical;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+/* 投稿ボタン */
+.btn.btn-primary {
+    background-color: #fff;
+    color: #305dff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+    background-color: #e0e0e0;
+}
+
+/* エラーメッセージ */
+.error {
+    color: #ffcccb;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
