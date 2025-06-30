@@ -2,9 +2,9 @@
 
 飲食店予約サービス
 **概要説明（どんなアプリか）**
-本アプリケーションは、飲食店予約サービスです。　　
-ユーザーは飲食店の一覧や詳細を確認し、日時と人数を指定して予約できます。　　
-また、管理ユーザーは予約された内容の閲覧やショップの管理が可能です。　　
+本アプリケーションは、飲食店予約サービスです。  
+ユーザーは飲食店の一覧や詳細を確認し、日時と人数を指定して予約できます。  
+また、管理ユーザーは予約された内容の閲覧やショップの管理が可能です。  
 ![トップ画面](top.png)
 
 ---
@@ -12,22 +12,22 @@
 ## アプリケーション URL
 http://localhost
 
-1. 管理者用アカウント　　
-   name: admin　　
-   Email: admin@example.com　　
-   Password: 1qaz2wsx　　
-　　
-2. テスト用店長アカウント　　
-   name: テスト用店長　　
-   Email: Manager@example.com　　
-   Password: Password123!　　
-　　
-3. テスト用一般ユーザーアカウント　　
-   name: テストユーザー　　
-   Email: user@example.com　　
-   Password: 1qaz2wsx　　
-　　
-- テスト用アカウントの内容変更　　
+1. 管理者用アカウント  
+   name: admin  
+   Email: admin@example.com  
+   Password: 1qaz2wsx  
+  
+2. テスト用店長アカウント  
+   name: テスト用店長  
+   Email: Manager@example.com  
+   Password: Password123!  
+  
+3. テスト用一般ユーザーアカウント  
+   name: テストユーザー  
+   Email: user@example.com  
+   Password: 1qaz2wsx  
+  
+- テスト用アカウントの内容変更  
   src/database/seeders/UserSeeder.php ファイルの内容を適宜編集してください。
 
 ---
