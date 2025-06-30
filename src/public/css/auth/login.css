@@ -29,9 +29,16 @@
 
 .login-form__group {
     display: flex;
+    flex-direction: column;
+    /* 縦に並べる */
+    margin-bottom: 20px;
+}
+
+.login-form__input-wrapper {
+    display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 20px;
+    width: 100%;
 }
 
 .login-form__image {
@@ -53,6 +60,12 @@
 
 .login-form-input::placeholder {
     color: #a8a8a8;
+}
+
+.login-form__error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 6px;
 }
 
 .login-form-button {

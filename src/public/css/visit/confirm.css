@@ -18,7 +18,7 @@
 }
 
 /* タイトル部分（青背景） */
-.visit-header {
+.visit-card__header {
     background-color: #305dff;
     color: #fff;
     padding: 16px;
@@ -30,7 +30,7 @@
 }
 
 /* 本文エリア */
-.visit-body {
+.visit-card__body {
     padding: 24px;
 }
 
@@ -43,16 +43,27 @@
     font-size: 16px;
 }
 
+.visit-info__label {
+    font-weight: 600;
+    text-align: left;
+}
+
+.visit-info__value {
+    text-align: left;
+}
+
 /* 来店済み */
-.status-visited {
-    color: green;
+.visit-status {
     font-weight: bold;
 }
 
+.visit-status--visited {
+    color: green;
+}
+
 /* 未来店 */
-.status-not-visited {
+.visit-status--not-visited {
     color: red;
-    font-weight: bold;
 }
 
 /* 来店ボタン */

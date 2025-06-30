@@ -171,30 +171,46 @@ input::placeholder {
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 16px;
-        height: auto;
+    .hamburger {
+        width: 36px;
+        height: 36px;
     }
 
-    .header__link {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        width: 100%;
-        margin-top: 12px;
+    .close-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+        line-height: 36px;
     }
 
-    .header__link input[type="submit"] {
-        width: 100%;
+    .logo {
+        font-size: 1rem;
+        margin-left: 8px;
+    }
+
+    .overlay-menu button,
+    .overlay-menu a {
+        font-size: 20px;
+    }
+
+    .overlay-menu li {
+        margin: 12px 0;
+    }
+
+    .main {
+        padding: 60px 16px;
     }
 
     .content {
-        padding: 24px;
+        padding: 16px;
     }
 
     .content__heading {
-        font-size: 24px;
+        font-size: 20px;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 13px;
     }
 }

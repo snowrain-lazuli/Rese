@@ -6,11 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const radios = document.querySelectorAll('input[name="recipient"]');
 
     const toggleOptions = () => {
-        const selected = document.querySelector('input[name="recipient"]:checked').value;
-        visitedOptions.style.display = selected === 'visited' ? 'block' : 'none';
-        favoritedOptions.style.display = selected === 'favorited' ? 'block' : 'none';
+        const selected = document.querySelector('input[name="recipient"]:checked')?.value;
+        if (!selected) return;
+        if (visitedOptions) visitedOptions.style.display = selected === 'visited' ? 'block' : 'none';
+        if (favoritedOptions) favoritedOptions.style.display = selected === 'favorited' ? 'block' : 'none';
     };
 
-    radios.forEach(r => r.addEventListener('change', toggleOptions));
-    toggleOptions(); // 初期表示
+    radios.forEach(radio => radio.addEventListener('change', toggleOptions));
+    toggleOptions();
 });

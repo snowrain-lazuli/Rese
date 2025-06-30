@@ -18,8 +18,8 @@ class Shops extends Migration
             $table->string('name');
             $table->string('area');
             $table->string('genre');
-            $table->text('description')->nullable();
-            $table->string('image_path')->nullable();
+            $table->text('description');
+            $table->string('image_path');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

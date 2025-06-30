@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Auth\Events\Registered;
+use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\AdminRegisterRequest;
 
 class RegisteredUserController extends Controller
 {
@@ -23,14 +25,8 @@ class RegisteredUserController extends Controller
     }
 
     // 一般ユーザー登録（role = 1）+ ログイン + 認証メール送信
-    public function registerUser(Request $request)
+    public function registerUser(RegisterRequest $request)
     {
-        Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|string|min:8',
-        ])->validate();
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -46,13 +42,8 @@ class RegisteredUserController extends Controller
     }
 
     // 店長登録（role = 2）※ログインしない
-    public function registerAdmin(Request $request)
+    public function registerAdmin(AdminRegisterRequest $request)
     {
-        Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users',
-        ])->validate();
-
         $temporaryPassword = 'Password123!'; // 仮パスワード
 
         $user = User::create([

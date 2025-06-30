@@ -1,22 +1,18 @@
 require('./bootstrap');
 
-document.addEventListener('DOMContentLoaded', function () {
-    const stars = document.querySelectorAll('.star-rating .star');
+document.addEventListener('DOMContentLoaded', () => {
+    const stars = document.querySelectorAll('.star-group .star');
     const ratingInput = document.getElementById('rating');
 
     function updateStars(value) {
         stars.forEach(star => {
-            if (parseInt(star.dataset.value) <= value) {
-                star.textContent = '★';
-            } else {
-                star.textContent = '☆';
-            }
+            star.textContent = parseInt(star.dataset.value) <= value ? '★' : '☆';
         });
     }
 
     stars.forEach(star => {
-        star.addEventListener('click', function () {
-            const value = parseInt(this.dataset.value);
+        star.addEventListener('click', () => {
+            const value = parseInt(star.dataset.value);
             ratingInput.value = value;
             updateStars(value);
         });

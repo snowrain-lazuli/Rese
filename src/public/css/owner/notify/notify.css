@@ -1,0 +1,151 @@
+.notify-panel {
+    max-width: 800px;
+    width: 70%;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #305dff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.notify-panel__title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 32px;
+}
+
+.notify-form__label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+}
+
+.notify-form__input,
+.notify-form__textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 14px;
+    background-color: #fff;
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 28px;
+    box-sizing: border-box;
+    resize: vertical;
+    min-height: 60px;
+}
+
+.notify-form__textarea {
+    min-height: 180px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.notify-form__submit {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #305dff;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.notify-form__submit:hover {
+    background-color: #e0e0e0;
+}
+
+.mail-preview {
+    background-color: #fff;
+    color: #000;
+    border-radius: 14px;
+    padding: 20px;
+    font-size: 16px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    min-height: 150px;
+    margin-bottom: 30px;
+}
+
+.notify-message {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: #305dff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.notify-message__text {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.notify-message__link {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #fff;
+    color: #305dff;
+    border-radius: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.notify-message__link:hover {
+    background-color: #e0e0e0;
+}
+
+
+@media (max-width: 768px) {
+
+    .notify-panel,
+    .confirm__container,
+    .notify-message {
+        width: 90%;
+        padding: 20px;
+        margin: 40px auto;
+    }
+
+    .notify-panel__title,
+    .confirm__title {
+        font-size: 22px;
+    }
+
+    .notify-form__label,
+    .confirm__label {
+        font-size: 16px;
+    }
+
+    .notify-form__input,
+    .notify-form__textarea,
+    .confirm__content,
+    .confirm__preview {
+        font-size: 16px;
+        padding: 12px 16px;
+        border-radius: 10px;
+    }
+
+    .notify-form__submit,
+    .confirm__button,
+    .notify-message__link {
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .notify-message__text {
+        font-size: 18px;
+    }
+}

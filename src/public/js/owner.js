@@ -19568,37 +19568,31 @@ var __webpack_exports__ = {};
   \*******************************/
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.custom-file-input').forEach(function (input) {
+  document.querySelectorAll('.input-file').forEach(function (input) {
     input.addEventListener('change', function () {
-      var shopId = this.dataset.shopId;
       var file = this.files[0];
-      if (file) {
-        // ファイル名表示
-        var statusEl = document.querySelector('.upload-status-' + shopId);
-        statusEl.textContent = "".concat(file.name, " \u3092\u30A2\u30C3\u30D7\u30ED\u30FC\u30C9\u3057\u307E\u3057\u305F");
+      if (!file) return;
 
-        // プレビュー画像の差し替え
-        var reader = new FileReader();
-        reader.onload = function (e) {
-          var preview = document.querySelector('.preview-' + shopId);
-          preview.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-  });
-  document.querySelectorAll('.custom-file-input').forEach(function (input) {
-    input.addEventListener('change', function () {
+      // create / update どちらかを判定
+      var shopId = this.dataset.shopId;
       var formType = this.dataset.formType;
-      var file = this.files[0];
-      if (file) {
-        var statusEl = document.querySelector('.upload-status-' + formType);
-        statusEl.textContent = "".concat(file.name, " \u3092\u30A2\u30C3\u30D7\u30ED\u30FC\u30C9\u3057\u307E\u3057\u305F");
+
+      // upload-status と preview のクラス名を決定
+      var identifier = shopId || formType;
+      var statusElement = document.querySelector(".status-".concat(identifier));
+      var previewImage = document.querySelector(".preview-".concat(identifier));
+
+      // ファイル名を表示
+      if (statusElement) {
+        statusElement.textContent = "".concat(file.name, " \u3092\u30A2\u30C3\u30D7\u30ED\u30FC\u30C9\u3057\u307E\u3057\u305F");
+      }
+
+      // プレビュー表示
+      if (previewImage) {
         var reader = new FileReader();
         reader.onload = function (e) {
-          var preview = document.querySelector('.preview-' + formType);
-          preview.src = e.target.result;
-          preview.style.display = 'block';
+          previewImage.src = e.target.result;
+          previewImage.style.display = 'block';
         };
         reader.readAsDataURL(file);
       }

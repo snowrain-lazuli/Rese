@@ -1,9 +1,9 @@
 require('./bootstrap');
 
 document.addEventListener('DOMContentLoaded', () => {
-    const dateInput = document.getElementById('date');
-    const timeSelect = document.getElementById('time');
-    const numberSelect = document.getElementById('number');
+    const dateInput = document.getElementById('reservation-date');
+    const timeSelect = document.getElementById('reservation-time');
+    const numberSelect = document.getElementById('reservation-number');
 
     const summaryDate = document.getElementById('summary-date');
     const summaryTime = document.getElementById('summary-time');

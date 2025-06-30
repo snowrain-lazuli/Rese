@@ -1,0 +1,155 @@
+.review-container {
+    max-width: 700px;
+    margin: 40px auto 0;
+    padding: 20px;
+}
+
+.review-panel {
+    background-color: #305dff;
+    border-radius: 16px;
+    padding: 30px 24px;
+    color: #fff;
+}
+
+.review-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.review-info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.review-label {
+    width: 80px;
+    font-weight: bold;
+    text-align: left;
+    padding-right: 8px;
+    padding-top: 10px;
+}
+
+.review-value {
+    flex: 1;
+    padding-top: 10px;
+    text-align: left;
+}
+
+.review-form-group {
+    margin-bottom: 16px;
+}
+
+.rating-group {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.star-group {
+    display: flex;
+    gap: 10px;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+}
+
+.star {
+    user-select: none;
+}
+
+textarea {
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    resize: vertical;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.btn-submit-review {
+    background-color: #fff;
+    color: #305dff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.btn-submit-review:hover {
+    background-color: #e0e0e0;
+}
+
+.form-error {
+    color: #ff0400;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .review-container {
+        padding: 16px;
+    }
+
+    .review-panel {
+        padding: 24px 16px;
+        border-radius: 12px;
+    }
+
+    .review-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .review-info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 16px;
+    }
+
+    .review-label {
+        width: 100%;
+        padding: 0;
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+
+    .review-value {
+        padding: 0;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .rating-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .star-group {
+        font-size: 28px;
+        gap: 6px;
+    }
+
+    textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn-submit-review {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .form-error {
+        font-size: 13px;
+    }
+}

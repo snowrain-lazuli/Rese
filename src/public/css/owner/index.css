@@ -1,0 +1,189 @@
+.notify-button-wrapper {
+    background-color: #305dff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-notify {
+    color: #fff;
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* レイアウト */
+.owner-dashboard {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.dashboard-left,
+.dashboard-right {
+    flex: 1;
+}
+
+/* 店舗情報作成・更新 */
+.shop-create,
+.shop-update {
+    background-color: #305dff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.shop-form,
+.shop-edit-box {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #000;
+    margin-top: 15px;
+}
+
+.input-text,
+.input-textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.shop-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.label-file {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #305dff;
+    color: #fff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.input-file {
+    display: none;
+}
+
+.btn-create-shop,
+.btn-update-shop {
+    background-color: #305dff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 予約表示 */
+.shop-reservations-panel {
+    background-color: #305dff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    color: #fff;
+}
+
+.shop-reservation-block {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+
+.shop-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.reservation-card {
+    background-color: #f2f2f2;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .owner-dashboard {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .dashboard-left,
+    .dashboard-right {
+        width: 100%;
+    }
+
+    .shop-create,
+    .shop-update,
+    .shop-form,
+    .shop-edit-box,
+    .shop-reservations-panel,
+    .shop-reservation-block,
+    .reservation-card {
+        padding: 1rem;
+    }
+
+    .shop-form,
+    .shop-edit-box {
+        margin-top: 1rem;
+    }
+
+    .label-file {
+        font-size: 14px;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .input-text,
+    .input-textarea {
+        font-size: 14px;
+    }
+
+    .btn-create-shop,
+    .btn-update-shop {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        padding: 0.6rem;
+    }
+
+    .notify-button-wrapper {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .btn-notify {
+        font-size: 14px;
+    }
+
+    .shop-image {
+        max-height: 160px;
+    }
+
+    .shop-title {
+        font-size: 18px;
+        margin-bottom: 0.5rem;
+    }
+
+    .reservation-card p {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+}

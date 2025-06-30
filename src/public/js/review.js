@@ -19568,20 +19568,16 @@ var __webpack_exports__ = {};
   \********************************/
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 document.addEventListener('DOMContentLoaded', function () {
-  var stars = document.querySelectorAll('.star-rating .star');
+  var stars = document.querySelectorAll('.star-group .star');
   var ratingInput = document.getElementById('rating');
   function updateStars(value) {
     stars.forEach(function (star) {
-      if (parseInt(star.dataset.value) <= value) {
-        star.textContent = '★';
-      } else {
-        star.textContent = '☆';
-      }
+      star.textContent = parseInt(star.dataset.value) <= value ? '★' : '☆';
     });
   }
   stars.forEach(function (star) {
     star.addEventListener('click', function () {
-      var value = parseInt(this.dataset.value);
+      var value = parseInt(star.dataset.value);
       ratingInput.value = value;
       updateStars(value);
     });

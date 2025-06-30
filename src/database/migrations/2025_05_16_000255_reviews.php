@@ -18,7 +18,7 @@ class Reviews extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('reservation_id')->constrained()->onDelete('cascade');
             $table->tinyInteger('rating'); // 1〜5
-            $table->text('comment')->nullable();
+            $table->text('comment');
             $table->timestamps();
         });
     }

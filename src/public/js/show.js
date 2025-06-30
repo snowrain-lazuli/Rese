@@ -19568,9 +19568,9 @@ var __webpack_exports__ = {};
   \******************************/
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 document.addEventListener('DOMContentLoaded', function () {
-  var dateInput = document.getElementById('date');
-  var timeSelect = document.getElementById('time');
-  var numberSelect = document.getElementById('number');
+  var dateInput = document.getElementById('reservation-date');
+  var timeSelect = document.getElementById('reservation-time');
+  var numberSelect = document.getElementById('reservation-number');
   var summaryDate = document.getElementById('summary-date');
   var summaryTime = document.getElementById('summary-time');
   var summaryNumber = document.getElementById('summary-number');

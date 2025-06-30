@@ -1,41 +1,33 @@
 require('./bootstrap');
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.custom-file-input').forEach(input => {
+    document.querySelectorAll('.input-file').forEach(input => {
         input.addEventListener('change', function () {
+            const file = this.files[0];
+
+            if (!file) return;
+
+            // create / update どちらかを判定
             const shopId = this.dataset.shopId;
-            const file = this.files[0];
-
-            if (file) {
-                // ファイル名表示
-                const statusEl = document.querySelector('.upload-status-' + shopId);
-                statusEl.textContent = `${file.name} をアップロードしました`;
-
-                // プレビュー画像の差し替え
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const preview = document.querySelector('.preview-' + shopId);
-                    preview.src = e.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-    });
-
-    document.querySelectorAll('.custom-file-input').forEach(input => {
-        input.addEventListener('change', function () {
             const formType = this.dataset.formType;
-            const file = this.files[0];
 
-            if (file) {
-                const statusEl = document.querySelector('.upload-status-' + formType);
-                statusEl.textContent = `${file.name} をアップロードしました`;
+            // upload-status と preview のクラス名を決定
+            const identifier = shopId || formType;
 
+            const statusElement = document.querySelector(`.status-${identifier}`);
+            const previewImage = document.querySelector(`.preview-${identifier}`);
+
+            // ファイル名を表示
+            if (statusElement) {
+                statusElement.textContent = `${file.name} をアップロードしました`;
+            }
+
+            // プレビュー表示
+            if (previewImage) {
                 const reader = new FileReader();
                 reader.onload = function (e) {
-                    const preview = document.querySelector('.preview-' + formType);
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = 'block';
                 };
                 reader.readAsDataURL(file);
             }

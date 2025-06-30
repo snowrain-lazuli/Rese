@@ -12,15 +12,20 @@
         <form class="login-form" action="/login" method="post">
             @csrf
             <div class="login-form__group">
-                <img src="{{ asset('images/mail.png') }}" class="login-form__image">
-                <input type="email" name="email" class="login-form-input" placeholder="Email">
+                <div class="login-form__input-wrapper">
+                    <img src="{{ asset('images/mail.png') }}" class="login-form__image">
+                    <input type="text" name="email" class="login-form-input" placeholder="Email">
+                </div>
                 @error('email')
                 <p class="login-form__error-message">{{ $message }}</p>
                 @enderror
             </div>
+
             <div class="login-form__group">
-                <img src="{{ asset('images/lock.png') }}" class="login-form__image">
-                <input type="password" name="password" class="login-form-input" placeholder="Password">
+                <div class="login-form__input-wrapper">
+                    <img src="{{ asset('images/lock.png') }}" class="login-form__image">
+                    <input type="password" name="password" class="login-form-input" placeholder="Password">
+                </div>
                 @error('password')
                 <p class="login-form__error-message">{{ $message }}</p>
                 @enderror

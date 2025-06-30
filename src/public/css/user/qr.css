@@ -1,0 +1,93 @@
+.qr-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.qr-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.qr-summary-card {
+    background-color: #f8f9fa;
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.qr-display-wrapper {
+    text-align: center;
+}
+
+.qr-instruction {
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.qr-box {
+    display: inline-block;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.qr-back-link {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.btn-return-mypage {
+    background-color: #305dff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-return-mypage:hover {
+    background-color: #224ed8;
+}
+
+@media (max-width: 768px) {
+    .qr-container {
+        padding: 16px;
+        margin: 20px auto;
+    }
+
+    .qr-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .qr-summary-card {
+        padding: 16px;
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .qr-instruction {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .qr-box {
+        padding: 16px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .btn-return-mypage {
+        display: inline-block;
+        width: 100%;
+        max-width: 320px;
+        padding: 10px;
+        font-size: 16px;
+    }
+}

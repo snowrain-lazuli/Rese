@@ -19568,89 +19568,60 @@ var __webpack_exports__ = {};
   \********************************/
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 document.addEventListener('DOMContentLoaded', function () {
-  var cards = document.querySelectorAll('.reservation-card');
-  if (cards.length === 0) return;
+  var items = document.querySelectorAll('.reservation-item');
+  if (items.length === 0) return;
   var modal = document.getElementById('deleteModal');
   var confirmDeleteBtn = document.getElementById('confirmDelete');
   var cancelDeleteBtn = document.getElementById('cancelDelete');
   var targetDeleteForm = null;
 
-  // すべて閉じて、指定のカードだけ開く
-  function closeAllExcept(openCard) {
-    cards.forEach(function (card) {
-      var icon = card.querySelector('.reservation-icon');
-      var deleteBtn = card.querySelector('.delete-button');
-      var body = card.querySelector('.reservation-body');
-      if (card === openCard) {
-        icon === null || icon === void 0 || icon.classList.remove('mypage-hidden');
-        deleteBtn === null || deleteBtn === void 0 || deleteBtn.classList.remove('mypage-hidden');
-        body === null || body === void 0 || body.classList.remove('mypage-hidden');
+  // 一つ以外全て閉じる
+  function closeAllExcept(openItem) {
+    items.forEach(function (item) {
+      var icon = item.querySelector('.reservation-icon');
+      var info = item.querySelector('.reservation-info');
+      var deleteBtn = item.querySelector('.reservation-delete-button');
+      var details = item.querySelector('.reservation-details');
+      var note = item.querySelector('.reservation-note');
+      if (item === openItem) {
+        icon === null || icon === void 0 || icon.classList.remove('hidden');
+        info === null || info === void 0 || info.classList.add('hidden');
+        deleteBtn === null || deleteBtn === void 0 || deleteBtn.classList.remove('hidden');
+        details === null || details === void 0 || details.classList.remove('hidden');
+        note === null || note === void 0 || note.classList.remove('hidden');
       } else {
-        icon === null || icon === void 0 || icon.classList.add('mypage-hidden');
-        deleteBtn === null || deleteBtn === void 0 || deleteBtn.classList.add('mypage-hidden');
-        body === null || body === void 0 || body.classList.add('mypage-hidden');
+        icon === null || icon === void 0 || icon.classList.add('hidden');
+        info === null || info === void 0 || info.classList.remove('hidden');
+        deleteBtn === null || deleteBtn === void 0 || deleteBtn.classList.add('hidden');
+        details === null || details === void 0 || details.classList.add('hidden');
+        note === null || note === void 0 || note.classList.add('hidden');
       }
     });
   }
-
-  // 初期状態で最初のカードだけ開く
-  closeAllExcept(cards[0]);
-
-  // 各カードのヘッダークリック時の動作
-  cards.forEach(function (card) {
-    var header = card.querySelector('.reservation-header');
-    var body = card.querySelector('.reservation-body');
+  closeAllExcept(items[0]);
+  items.forEach(function (item) {
+    var header = item.querySelector('.reservation-header');
+    var details = item.querySelector('.reservation-details');
     header.addEventListener('click', function (e) {
-      // ×ボタンがクリックされた場合はモーダル処理に任せる
-      if (e.target.classList.contains('delete-button')) return;
-      var isOpen = !body.classList.contains('mypage-hidden');
-      if (isOpen) return; // 既に開いている場合は何もしない
-
-      closeAllExcept(card);
+      if (e.target.classList.contains('reservation-delete-button')) return;
+      var isOpen = !details.classList.contains('hidden');
+      if (isOpen) return;
+      closeAllExcept(item);
     });
-
-    // ×ボタン処理（モーダル表示）
-    var deleteBtn = card.querySelector('.delete-button');
+    var deleteBtn = item.querySelector('.reservation-delete-button');
     deleteBtn.addEventListener('click', function (e) {
-      e.stopPropagation(); // ヘッダークリックを止める
-      targetDeleteForm = card.querySelector('.delete-reservation-form');
-      modal === null || modal === void 0 || modal.classList.remove('mypage-hidden');
+      e.stopPropagation();
+      targetDeleteForm = item.querySelector('.reservation-delete-form');
+      modal === null || modal === void 0 || modal.classList.remove('hidden');
     });
   });
-
-  // モーダル内の「はい」クリックで削除実行
   confirmDeleteBtn === null || confirmDeleteBtn === void 0 || confirmDeleteBtn.addEventListener('click', function () {
     if (targetDeleteForm) targetDeleteForm.submit();
   });
-
-  // モーダル内の「いいえ」でキャンセル
   cancelDeleteBtn === null || cancelDeleteBtn === void 0 || cancelDeleteBtn.addEventListener('click', function () {
-    modal === null || modal === void 0 || modal.classList.add('mypage-hidden');
+    modal === null || modal === void 0 || modal.classList.add('hidden');
     targetDeleteForm = null;
   });
-  function closeAllExcept(openCard) {
-    cards.forEach(function (card) {
-      var icon = card.querySelector('.reservation-icon');
-      var summary = card.querySelector('.reservation-summary');
-      var deleteBtn = card.querySelector('.delete-button');
-      var body = card.querySelector('.reservation-body');
-      var hint = card.querySelector('.change-hint'); // ← 追加
-
-      if (card === openCard) {
-        icon.classList.remove('mypage-hidden');
-        summary.classList.add('mypage-hidden');
-        deleteBtn.classList.remove('mypage-hidden');
-        body.classList.remove('mypage-hidden');
-        if (hint) hint.classList.remove('mypage-hidden'); // ← 表示
-      } else {
-        icon.classList.add('mypage-hidden');
-        summary.classList.remove('mypage-hidden');
-        deleteBtn.classList.add('mypage-hidden');
-        body.classList.add('mypage-hidden');
-        if (hint) hint.classList.add('mypage-hidden'); // ← 非表示
-      }
-    });
-  }
 });
 })();
 
